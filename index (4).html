@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Kshitiz Raj Srivastava — PM Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --orange: #E8630A;
+  --orange-mid: #F97316;
+  --orange-light: #FFF4ED;
+  --orange-pale: #FEF3E8;
+  --dark: #0F0F0F;
+  --mid: #3D3D3D;
+  --muted: #777;
+  --border: #E8E8E8;
+  --surface: #FAFAFA;
+  --white: #FFFFFF;
+  --radius: 12px;
+  --radius-sm: 8px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--dark);
+  color: var(--white);
+  line-height: 1.65;
+  overflow-x: hidden;
+}
+a { color: inherit; text-decoration: none; }
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 2rem;
+  height: 60px;
+  background: rgba(15,15,15,0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.nav-logo {
+  font-size: 15px; font-weight: 600; letter-spacing: 0.01em;
+}
+.nav-logo span { color: var(--orange); }
+.nav-links { display: flex; gap: 1.75rem; }
+.nav-links a {
+  font-size: 13px; color: rgba(255,255,255,0.55);
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--white); }
+.nav-cta {
+  font-size: 12px; font-weight: 500;
+  padding: 7px 16px;
+  border: 1px solid var(--orange);
+  border-radius: 6px;
+  color: var(--orange);
+  transition: background 0.2s, color 0.2s;
+}
+.nav-cta:hover { background: var(--orange); color: white; }
+
+/* ── HERO ── */
+.hero {
+  min-height: 100vh;
+  display: flex; flex-direction: column; justify-content: center;
+  padding: 100px 2rem 60px;
+  max-width: 1100px; margin: 0 auto;
+  position: relative;
+}
+.hero-eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 12px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--orange); margin-bottom: 1.5rem;
+}
+.hero-eyebrow::before {
+  content: ''; width: 24px; height: 1px; background: var(--orange);
+}
+.hero h1 {
+  font-size: clamp(2.8rem, 6vw, 5rem);
+  font-weight: 300;
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  margin-bottom: 1.5rem;
+}
+.hero h1 strong { font-weight: 600; }
+.hero h1 em {
+  font-style: normal;
+  color: var(--orange);
+  font-weight: 300;
+}
+.hero-sub {
+  font-size: 17px; color: rgba(255,255,255,0.5);
+  max-width: 520px; line-height: 1.7; margin-bottom: 2.5rem;
+}
+.hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 13px 28px; border-radius: 8px;
+  background: var(--orange); color: white;
+  font-size: 14px; font-weight: 500;
+  transition: background 0.2s, transform 0.15s;
+}
+.btn-primary:hover { background: var(--orange-mid); transform: translateY(-1px); }
+.btn-ghost {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 13px 28px; border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.15); color: rgba(255,255,255,0.7);
+  font-size: 14px; font-weight: 400;
+  transition: border-color 0.2s, color 0.2s;
+}
+.btn-ghost:hover { border-color: rgba(255,255,255,0.4); color: white; }
+.hero-scroll {
+  position: absolute; bottom: 2.5rem; left: 2rem;
+  font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;
+  color: rgba(255,255,255,0.25);
+  display: flex; align-items: center; gap: 8px;
+}
+.hero-scroll::after { content: ''; width: 40px; height: 1px; background: rgba(255,255,255,0.15); }
+
+/* ── STATS BAR ── */
+.stats-bar {
+  background: rgba(255,255,255,0.03);
+  border-top: 1px solid rgba(255,255,255,0.06);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  padding: 2rem;
+}
+.stats-inner {
+  max-width: 1100px; margin: 0 auto;
+  display: grid; grid-template-columns: repeat(4,1fr); gap: 2rem;
+}
+.stat-item { text-align: center; }
+.stat-num {
+  font-size: 2rem; font-weight: 600; color: var(--orange);
+  line-height: 1; margin-bottom: 4px;
+}
+.stat-lbl { font-size: 12px; color: rgba(255,255,255,0.4); }
+
+/* ── SECTIONS ── */
+section { padding: 6rem 2rem; }
+.section-inner { max-width: 1100px; margin: 0 auto; }
+.section-header { margin-bottom: 3rem; }
+.section-tag {
+  display: inline-block;
+  font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--orange); margin-bottom: 0.75rem;
+}
+.section-title {
+  font-size: clamp(1.6rem, 3vw, 2.5rem);
+  font-weight: 300; letter-spacing: -0.02em; line-height: 1.2;
+}
+.section-title strong { font-weight: 600; }
+.section-sub {
+  font-size: 15px; color: rgba(255,255,255,0.45);
+  max-width: 500px; margin-top: 0.75rem; line-height: 1.7;
+}
+
+/* ── CASE STUDY ── */
+#case-study { background: #141414; }
+.cs-hero-card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px; overflow: hidden;
+  margin-bottom: 2rem;
+}
+.cs-top-bar {
+  height: 3px;
+  background: linear-gradient(90deg, var(--orange), var(--orange-mid));
+}
+.cs-card-body { padding: 2rem 2.5rem; }
+.cs-card-body h2 {
+  font-size: 1.5rem; font-weight: 500; margin-bottom: 0.75rem;
+}
+.cs-card-body p { color: rgba(255,255,255,0.5); font-size: 15px; line-height: 1.7; }
+.cs-meta-row {
+  display: flex; gap: 2rem; flex-wrap: wrap;
+  padding: 1.25rem 2.5rem;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  background: rgba(0,0,0,0.2);
+}
+.cs-meta-item .lbl { font-size: 11px; color: rgba(255,255,255,0.3); margin-bottom: 2px; }
+.cs-meta-item .val { font-size: 13px; font-weight: 500; }
+.cs-meta-item .val.orange { color: var(--orange); }
+
+.tabs {
+  display: flex; gap: 0;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 10px; overflow: hidden;
+  margin-bottom: 1.5rem;
+  width: fit-content;
+}
+.tab {
+  padding: 9px 20px; font-size: 13px; font-weight: 400;
+  background: transparent; border: none; color: rgba(255,255,255,0.4);
+  cursor: pointer; font-family: 'DM Sans', sans-serif;
+  border-right: 1px solid rgba(255,255,255,0.1);
+  transition: background 0.15s, color 0.15s;
+}
+.tab:last-child { border-right: none; }
+.tab.active { background: var(--orange); color: white; font-weight: 500; }
+.tab-panel { display: none; }
+.tab-panel.active { display: block; }
+
+.narrative {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: var(--radius);
+  padding: 1.75rem 2rem;
+  color: rgba(255,255,255,0.65);
+  font-size: 15px; line-height: 1.8;
+}
+.narrative p + p { margin-top: 1rem; }
+.narrative strong { color: rgba(255,255,255,0.85); font-weight: 500; }
+
+.metrics-grid {
+  display: grid; grid-template-columns: repeat(4,1fr); gap: 12px;
+  margin-bottom: 2rem;
+}
+.m-card {
+  background: rgba(232,99,10,0.08);
+  border: 1px solid rgba(232,99,10,0.2);
+  border-radius: var(--radius-sm);
+  padding: 1.25rem; text-align: center;
+}
+.m-card .num { font-size: 1.6rem; font-weight: 600; color: var(--orange); line-height: 1; }
+.m-card .lbl { font-size: 11px; color: rgba(255,255,255,0.4); margin-top: 4px; line-height: 1.4; }
+
+.decision-list { display: flex; flex-direction: column; gap: 1px; }
+.decision-item {
+  display: grid; grid-template-columns: 200px 1fr;
+  gap: 0;
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: var(--radius-sm); overflow: hidden;
+  margin-bottom: 8px;
+}
+.d-q {
+  padding: 1rem 1.25rem;
+  background: rgba(232,99,10,0.07);
+  border-right: 1px solid rgba(232,99,10,0.15);
+  font-size: 13px; font-weight: 500; color: var(--orange);
+  line-height: 1.5;
+}
+.d-a {
+  padding: 1rem 1.25rem;
+  font-size: 13px; color: rgba(255,255,255,0.55); line-height: 1.6;
+}
+
+.feature-grid {
+  display: grid; grid-template-columns: repeat(3,1fr); gap: 12px;
+}
+.f-card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: var(--radius-sm);
+  padding: 1.25rem;
+  transition: border-color 0.2s;
+}
+.f-card:hover { border-color: rgba(232,99,10,0.3); }
+.f-card .icon { font-size: 1.25rem; margin-bottom: 8px; }
+.f-card h4 { font-size: 13px; font-weight: 500; margin-bottom: 4px; }
+.f-card p { font-size: 12px; color: rgba(255,255,255,0.4); line-height: 1.55; }
+
+.outcome-row {
+  display: grid; grid-template-columns: repeat(3,1fr); gap: 12px;
+}
+.o-card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: var(--radius-sm);
+  padding: 1.25rem; text-align: center;
+}
+.o-card .icon { font-size: 1.5rem; margin-bottom: 8px; display: block; }
+.o-card .val { font-size: 1.25rem; font-weight: 500; display: block; margin-bottom: 4px; }
+.o-card .lbl { font-size: 12px; color: rgba(255,255,255,0.4); }
+
+/* ── PROCESS ── */
+#process { background: var(--dark); }
+.timeline { position: relative; padding-left: 2rem; }
+.timeline::before {
+  content: ''; position: absolute; left: 7px; top: 0; bottom: 0;
+  width: 1px; background: rgba(255,255,255,0.1);
+}
+.tl-item { position: relative; padding-bottom: 2.5rem; }
+.tl-dot {
+  position: absolute; left: -2rem; top: 4px;
+  width: 14px; height: 14px; border-radius: 50%;
+  background: var(--dark); border: 2px solid var(--orange);
+}
+.tl-dot.filled { background: var(--orange); }
+.tl-phase { font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--orange); margin-bottom: 4px; }
+.tl-title { font-size: 16px; font-weight: 500; margin-bottom: 6px; }
+.tl-desc { font-size: 14px; color: rgba(255,255,255,0.45); line-height: 1.65; max-width: 560px; }
+
+/* ── SKILLS ── */
+#skills { background: #141414; }
+.skills-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
+.skill-card {
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: var(--radius); padding: 1.75rem;
+}
+.skill-card h3 { font-size: 14px; font-weight: 500; margin-bottom: 12px; color: rgba(255,255,255,0.85); }
+.skill-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.skill-tag {
+  font-size: 11px; padding: 4px 10px; border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.1);
+  color: rgba(255,255,255,0.45);
+}
+.skill-tag.orange {
+  background: rgba(232,99,10,0.1); border-color: rgba(232,99,10,0.3);
+  color: var(--orange);
+}
+
+/* ── QUOTE ── */
+.quote-section { background: var(--dark); }
+.quote-wrap {
+  max-width: 760px; margin: 0 auto; text-align: center;
+}
+.big-quote {
+  font-size: clamp(1.1rem, 2.2vw, 1.5rem);
+  font-weight: 300; line-height: 1.6;
+  color: rgba(255,255,255,0.7);
+  font-style: italic;
+  margin-bottom: 2rem;
+}
+.big-quote strong { color: white; font-weight: 500; font-style: normal; }
+.quote-attr { font-size: 13px; color: rgba(255,255,255,0.3); }
+
+/* ── CONTACT ── */
+#contact { background: #141414; }
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
+.contact-info h2 { font-size: 2rem; font-weight: 300; letter-spacing: -0.02em; margin-bottom: 1rem; }
+.contact-info h2 strong { font-weight: 600; }
+.contact-info p { color: rgba(255,255,255,0.45); font-size: 15px; line-height: 1.7; margin-bottom: 2rem; }
+.contact-links { display: flex; flex-direction: column; gap: 10px; }
+.contact-link {
+  display: flex; align-items: center; gap: 12px;
+  padding: 12px 16px;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 10px;
+  color: rgba(255,255,255,0.6);
+  font-size: 13px;
+  transition: border-color 0.2s, color 0.2s, background 0.2s;
+}
+.contact-link:hover { border-color: var(--orange); color: var(--orange); background: rgba(232,99,10,0.04); }
+.contact-link .cl-icon { width: 20px; text-align: center; font-size: 16px; }
+.demo-card {
+  background: rgba(232,99,10,0.06);
+  border: 1px solid rgba(232,99,10,0.2);
+  border-radius: 16px; padding: 2rem;
+}
+.demo-card h3 { font-size: 16px; font-weight: 500; margin-bottom: 8px; }
+.demo-card p { font-size: 13px; color: rgba(255,255,255,0.45); line-height: 1.6; margin-bottom: 1.25rem; }
+.demo-card .url {
+  font-family: 'DM Mono', monospace; font-size: 11px;
+  color: var(--orange); background: rgba(232,99,10,0.1);
+  padding: 10px 14px; border-radius: 8px;
+  display: block; margin-bottom: 1.25rem;
+  word-break: break-all;
+}
+.demo-btn {
+  display: block; width: 100%;
+  padding: 12px; border-radius: 8px;
+  background: var(--orange); color: white;
+  font-size: 13px; font-weight: 500; text-align: center;
+  transition: background 0.2s;
+}
+.demo-btn:hover { background: var(--orange-mid); }
+
+/* ── WALKTHROUGH ── */
+.walk-steps { display: flex; flex-direction: column; gap: 5rem; }
+.walk-item { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
+.walk-item-rev { direction: rtl; }
+.walk-item-rev > * { direction: ltr; }
+.walk-num { font-size: 3rem; font-weight: 700; color: rgba(232,99,10,0.15); line-height: 1; margin-bottom: 0.25rem; font-variant-numeric: tabular-nums; }
+.walk-phase { font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--orange); margin-bottom: 6px; }
+.walk-text h3 { font-size: 1.3rem; font-weight: 500; margin-bottom: 0.75rem; }
+.walk-text p { font-size: 14px; color: rgba(255,255,255,0.45); line-height: 1.7; margin-bottom: 1rem; }
+.walk-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.wtag { font-size: 11px; padding: 3px 10px; border-radius: 20px; border: 1px solid rgba(232,99,10,0.3); color: var(--orange); background: rgba(232,99,10,0.07); }
+.walk-img-wrap { display: flex; justify-content: center; }
+.walk-screen {
+  width: 100%; max-width: 300px;
+  border-radius: 10px; overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.1);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+}
+.walk-screen-wide { max-width: 380px; }
+.screen-bar {
+  background: #2a2a2a; padding: 8px 12px;
+  display: flex; gap: 6px; align-items: center;
+}
+.screen-bar span { width: 8px; height: 8px; border-radius: 50%; background: #555; display: block; }
+.screen-bar span:nth-child(1) { background: #ff5f57; }
+.screen-bar span:nth-child(2) { background: #febc2e; }
+.screen-bar span:nth-child(3) { background: #28c840; }
+.screen-body { background: #fff; min-height: 200px; overflow: hidden; }
+
+@media (max-width: 768px) {
+  .walk-item, .walk-item-rev { grid-template-columns: 1fr; direction: ltr; }
+  .walk-img-wrap { order: -1; }
+  .walk-screen, .walk-screen-wide { max-width: 100%; }
+}
+
+/* ── Phone contact row ── */
+.contact-link-phone {
+  display: flex; align-items: center; gap: 12px;
+  flex-wrap: wrap; cursor: default;
+}
+.contact-link-phone:hover { border-color: var(--orange); background: rgba(232,99,10,0.04); }
+.phone-num { font-size: 13px; color: rgba(255,255,255,0.6); flex-shrink: 0; }
+.phone-actions { display: flex; gap: 6px; margin-left: auto; }
+.phone-btn {
+  display: inline-flex; align-items: center; gap: 4px;
+  font-size: 11px; font-weight: 500;
+  padding: 4px 10px; border-radius: 6px;
+  border: 1px solid rgba(255,255,255,0.15);
+  color: rgba(255,255,255,0.65);
+  background: rgba(255,255,255,0.05);
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+  white-space: nowrap;
+  text-decoration: none;
+}
+.phone-btn:hover { background: rgba(232,99,10,0.15); border-color: var(--orange); color: var(--orange); }
+.phone-btn-wa { border-color: rgba(37,211,102,0.3); color: #25D366; background: rgba(37,211,102,0.07); }
+.phone-btn-wa:hover { background: rgba(37,211,102,0.18); border-color: #25D366; color: #25D366; }
+@media (max-width: 480px) {
+  .phone-actions { margin-left: 0; }
+  .contact-link-phone { align-items: flex-start; }
+}
+
+/* ── LinkedIn contact link ── */
+.contact-link-li .cl-icon {
+  font-size: 11px; font-weight: 700;
+  background: #0077b5; color: white;
+  width: 20px; height: 20px; border-radius: 4px;
+  display: inline-flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+
+/* ── FOOTER ── */
+footer {
+  background: var(--dark);
+  border-top: 1px solid rgba(255,255,255,0.06);
+  padding: 2rem;
+  text-align: center;
+  font-size: 12px; color: rgba(255,255,255,0.2);
+}
+footer span { color: var(--orange); }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .stats-inner, .metrics-grid, .feature-grid, .outcome-row, .skills-grid { grid-template-columns: 1fr 1fr; }
+  .decision-item { grid-template-columns: 1fr; }
+  .d-q { border-right: none; border-bottom: 1px solid rgba(232,99,10,0.15); }
+  .contact-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 480px) {
+  .stats-inner, .metrics-grid, .feature-grid, .outcome-row, .skills-grid { grid-template-columns: 1fr; }
+  .tabs { width: 100%; }
+  .tab { flex: 1; font-size: 11px; padding: 9px 8px; }
+}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.fade-up { animation: fadeUp 0.6s ease both; }
+.fade-up:nth-child(2) { animation-delay: 0.1s; }
+.fade-up:nth-child(3) { animation-delay: 0.2s; }
+.fade-up:nth-child(4) { animation-delay: 0.3s; }
+
+/* ── GLOW ── */
+.glow-dot {
+  position: absolute; width: 400px; height: 400px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(232,99,10,0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">KRS <span>·</span> PM</div>
+  <div class="nav-links">
+    <a href="#case-study">Case Study</a>
+    <a href="#walkthrough">Walkthrough</a>
+    <a href="#process">Process</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <a href="#contact" class="nav-cta">Book Demo</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="glow-dot" style="top:-100px;right:-100px;"></div>
+  <div class="hero-eyebrow">Product Manager · Fintech • EdTech • SaaS • Automation</div>
+  <h1 class="fade-up">
+    Building <em>scalable</em> products<br/>
+    and user <strong>experiences.</strong>
+  </h1>
+  <p class="hero-sub fade-up">
+    I spec, scope, and ship end-to-end fintech products — from API payload design to webhook idempotency to role-based dashboards. This portfolio documents one of them in full.
+  </p>
+  <div class="hero-actions fade-up">
+    <a href="#case-study" class="btn-primary">See the case study →</a>
+    <a href="#contact" class="btn-ghost">Book Demo ↗</a>
+  </div>
+  <div class="hero-scroll">Scroll to explore</div>
+</section>
+
+<!-- STATS -->
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat-item"><div class="stat-num">100%</div><div class="stat-lbl">Real-time webhook sync</div></div>
+    <div class="stat-item"><div class="stat-num">INR+USD</div><div class="stat-lbl">Multi-currency routing</div></div>
+    <div class="stat-item"><div class="stat-num">4</div><div class="stat-lbl">Audit log types captured</div></div>
+    <div class="stat-item"><div class="stat-num">0</div><div class="stat-lbl">Manual reconciliation steps</div></div>
+  </div>
+</div>
+
+<!-- CASE STUDY -->
+<section id="case-study">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-tag">PM Case Study</div>
+      <h2 class="section-title">Payment Link Generator<br/><strong>UNext Learning</strong></h2>
+      <p class="section-sub">A production-ready fee collection tool built end-to-end — from Juspay API integration to real-time webhook handling to role-based analytics.</p>
+    </div>
+
+    <!-- Hero card -->
+    <div class="cs-hero-card">
+      <div class="cs-top-bar"></div>
+      <div class="cs-card-body">
+        <h2>Payment Link Generator — UNext Learning</h2>
+        <p>A full-stack internal tool that replaced manual, fragmented fee collection with a real-time, role-aware dashboard. Educators generate Juspay payment links in seconds; the system automatically syncs payment outcomes via webhooks — eliminating manual reconciliation entirely.</p>
+      </div>
+      <div class="cs-meta-row">
+        <div class="cs-meta-item"><div class="lbl">Role</div><div class="val">Product Manager</div></div>
+        <div class="cs-meta-item"><div class="lbl">Domain</div><div class="val">EdTech · Payments</div></div>
+        <div class="cs-meta-item"><div class="lbl">Gateway</div><div class="val">Juspay</div></div>
+        <div class="cs-meta-item"><div class="lbl">Stack</div><div class="val">React · Node.js · PostgreSQL</div></div>
+        <div class="cs-meta-item"><div class="lbl">Demo</div><div class="val orange"><a href="#contact">Book Demo ↗</a></div></div>
+      </div>
+    </div>
+
+    <!-- Metrics -->
+    <div class="metrics-grid">
+      <div class="m-card"><div class="num">Real-time</div><div class="lbl">Payment status via webhooks</div></div>
+      <div class="m-card"><div class="num">Unified</div><div class="lbl">Dashboard for all users & orders</div></div>
+      <div class="m-card"><div class="num">Zero</div><div class="lbl">Manual reconciliation post-deploy</div></div>
+      <div class="m-card"><div class="num">4</div><div class="lbl">Full audit log types captured</div></div>
+    </div>
+
+    <!-- Tabs -->
+    <div class="tabs">
+      <button class="tab active" onclick="switchTab(this,'tp')">Problem</button>
+      <button class="tab" onclick="switchTab(this,'ts')">Solution</button>
+      <button class="tab" onclick="switchTab(this,'td')">Decisions</button>
+      <button class="tab" onclick="switchTab(this,'tf')">What I Built</button>
+      <button class="tab" onclick="switchTab(this,'ti')">Impact</button>
+    </div>
+
+    <div id="tp" class="tab-panel active">
+      <div class="narrative">
+        <p>UNext Learning's fee collection was entirely manual. Operations staff coordinated across email, spreadsheets, and a raw Juspay merchant account — with no unified view of who had paid, which links had expired, and who generated which link.</p>
+        <p>When a student made a payment, there was no automatic update to internal records. Every payment required a manual check in Juspay's dashboard and a corresponding update to a shared spreadsheet. For a business processing fees across multiple programs, semesters, and currencies (INR and USD), this created significant operational delay and reconciliation errors.</p>
+        <p><strong>The core question:</strong> how do we give educators a fast, reliable way to generate and track payment links — without building a full billing platform from scratch?</p>
+      </div>
+    </div>
+
+    <div id="ts" class="tab-panel">
+      <div class="narrative">
+        <p>I scoped and shipped a focused internal tool: a Payment Link Generator that wraps Juspay's session API in a clean, role-aware interface purpose-built for UNext's fee collection workflow.</p>
+        <p>Rather than building a generic payment tool, I made deliberate product choices: expiry enforcement mapped to exact minute calculations, semester selection rules tied to fee type (single select for Semester, consecutive-only for Annual and Full Course), automatic gateway routing based on currency (INR → Semester-RD, USD → Semester-RI), and a webhook handler that writes payment outcomes directly into the dashboard — eliminating manual reconciliation entirely.</p>
+        <p>The app captures structured logs across all four interaction points (user submission, Juspay API call, webhook receipt, SLCM), giving the team full audit visibility without needing to access Juspay's own dashboard.</p>
+      </div>
+    </div>
+
+    <div id="td" class="tab-panel">
+      <div class="decision-list">
+        <div class="decision-item">
+          <div class="d-q">Why PostgreSQL over a lightweight option like lowdb?</div>
+          <div class="d-a">Webhook events arrive asynchronously and must be idempotently matched to orders. A proper relational DB ensures durability and concurrent write safety — critical when multiple payment events can arrive for the same order ID.</div>
+        </div>
+        <div class="decision-item">
+          <div class="d-q">Why Admin-only system logs?</div>
+          <div class="d-a">API payloads and webhook bodies contain sensitive payment data. Restricting access to the Admin role keeps the operational interface clean for regular users without building a separate admin console.</div>
+        </div>
+        <div class="decision-item">
+          <div class="d-q">Why enforce consecutive semester selection?</div>
+          <div class="d-a">Annual and Full Course fee types correspond to contiguous academic periods. Non-consecutive selection creates invalid fee structures and downstream reconciliation errors in SLCM. The UI constraint prevents the error at the source.</div>
+        </div>
+        <div class="decision-item">
+          <div class="d-q">Why not use Juspay's hosted dashboard directly?</div>
+          <div class="d-a">Juspay's dashboard is generic. Our team needed UNext-specific fields (roll number, program, semester, fee type), per-user attribution, and INR/USD routing logic baked into a single workflow — none of which Juspay natively supports.</div>
+        </div>
+        <div class="decision-item">
+          <div class="d-q">Why migrate from URL tokens to email/password auth?</div>
+          <div class="d-a">URL-based tokens are shareable and unrevokable. Email/password auth with roles gives us proper access control, forgot-password flows, and the ability to restrict sensitive log access to the Admin role only.</div>
+        </div>
+      </div>
+    </div>
+
+    <div id="tf" class="tab-panel">
+      <div class="feature-grid">
+        <div class="f-card">
+          <div class="icon">🔗</div>
+          <h4>Live Juspay Integration</h4>
+          <p>Full session API with payload mapping, expiry-in-minutes calculation, and currency-based gateway routing (INR → Semester-RD, USD → Semester-RI).</p>
+        </div>
+        <div class="f-card">
+          <div class="icon">⚡</div>
+          <h4>Webhook Handler</h4>
+          <p>ORDER_SUCCEEDED and ORDER_FAILED events. Extracts epg_txn_id, txn_id, status — auto-updates DB in real time with IST timestamp conversion.</p>
+        </div>
+        <div class="f-card">
+          <div class="icon">📊</div>
+          <h4>Analytics Dashboard</h4>
+          <p>Metrics, per-user breakdown, paginated orders table, 4 live filters, status badges, copy-to-clipboard. Auto-refreshes every 30 seconds.</p>
+        </div>
+        <div class="f-card">
+          <div class="icon">🔐</div>
+          <h4>Role-Based Auth</h4>
+          <p>Email + password login. Admin sees full system logs. Regular users see only operational views. Forgot-password flow with complexity enforcement.</p>
+        </div>
+        <div class="f-card">
+          <div class="icon">📋</div>
+          <h4>4-Type Audit Logs</h4>
+          <p>User submissions, Juspay API calls, webhook payloads, SLCM events — each with collapsible JSON and timestamps. Admin-only access.</p>
+        </div>
+        <div class="f-card">
+          <div class="icon">📱</div>
+          <h4>Semester Validation</h4>
+          <p>Single select for Semester fee type. Consecutive-only dual select for Annual. Consecutive-only multi-select for Full Course. Enforced in UI.</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="ti" class="tab-panel">
+      <div class="outcome-row" style="margin-bottom:1.5rem;">
+        <div class="o-card"><span class="icon">⚡</span><span class="val">Real-time</span><span class="lbl">Payment status visible across the team</span></div>
+        <div class="o-card"><span class="icon">🎯</span><span class="val">Unified</span><span class="lbl">Single source of truth for all orders</span></div>
+        <div class="o-card"><span class="icon">✅</span><span class="val">Zero</span><span class="lbl">Manual reconciliation steps post-deployment</span></div>
+      </div>
+      <div class="narrative">
+        <p>Before this tool, a staff member would generate a link in Juspay, note it manually, share it with the student, then check back later to see if it was paid — updating a spreadsheet by hand. Errors and delays were routine.</p>
+        <p>After deployment: the entire lifecycle — link generation, delivery, payment, status sync — is captured automatically. The operations team has a live dashboard with full visibility into every order, zero manual work required after link generation.</p>
+        <p><strong>The broader signal:</strong> this demonstrates that well-scoped internal tooling can eliminate entire categories of operational overhead without the cost or risk of a full platform rebuild.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-tag">How I Work</div>
+      <h2 class="section-title">From gap to<br/><strong>production</strong></h2>
+      <p class="section-sub">How this project went from a spreadsheet problem to a live payment tool.</p>
+    </div>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-dot filled"></div>
+        <div class="tl-phase">Discovery</div>
+        <div class="tl-title">Identified the ops gap</div>
+        <div class="tl-desc">Mapped the existing process — Juspay account, manual link sharing, spreadsheet reconciliation. Identified where automation would have highest leverage: the status sync loop between payment and record update.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot filled"></div>
+        <div class="tl-phase">Scoping</div>
+        <div class="tl-title">Defined the exact API payload mapping</div>
+        <div class="tl-desc">Translated UNext's business fields (roll number, program, semester, fee type) into Juspay's session API schema. Designed the gateway routing rule, expiry calculation logic, and semester selection constraints before writing a line of code.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot filled"></div>
+        <div class="tl-phase">Build</div>
+        <div class="tl-title">Shipped full-stack with webhook handling</div>
+        <div class="tl-desc">React frontend, Express backend, PostgreSQL for orders and logs. Webhook handler updates records in real time. Auth migrated from URL tokens to role-based email/password login.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-phase">Iteration</div>
+        <div class="tl-title">Refined based on real usage</div>
+        <div class="tl-desc">Added consecutive semester validation, PaymentID column in dashboard, full country code list via libphonenumber-js, and Admin-only log access — all driven by actual ops team feedback post-launch.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE -->
+<section class="quote-section" style="padding: 5rem 2rem; background: #0a0a0a;">
+  <div class="quote-wrap">
+    <div class="big-quote">
+      "The key PM skill here wasn't just knowing <strong>what to build</strong> — it was knowing <strong>what not to build</strong>. I didn't try to replicate Juspay's full functionality. I built exactly what the team needed, no more."
+    </div>
+    <div class="quote-attr">— Kshitiz Raj Srivastava, on scoping decisions</div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-tag">Capabilities</div>
+      <h2 class="section-title">What I bring to<br/><strong>fintech roles</strong></h2>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <h3>Payment Integrations</h3>
+        <div class="skill-tags">
+          <span class="skill-tag orange">Juspay</span>
+          <span class="skill-tag orange">Razorpay</span>
+          <span class="skill-tag">Webhook design</span>
+          <span class="skill-tag">Session API</span>
+          <span class="skill-tag">Gateway routing</span>
+          <span class="skill-tag">Idempotency</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <h3>Product Management</h3>
+        <div class="skill-tags">
+          <span class="skill-tag orange">Spec writing</span>
+          <span class="skill-tag orange">Scoping</span>
+          <span class="skill-tag">Tradeoff decisions</span>
+          <span class="skill-tag">Stakeholder comms</span>
+          <span class="skill-tag">0→1 builds</span>
+          <span class="skill-tag">Internal tooling</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <h3>Technical Depth</h3>
+        <div class="skill-tags">
+          <span class="skill-tag orange">React</span>
+          <span class="skill-tag orange">Node.js</span>
+          <span class="skill-tag">PostgreSQL</span>
+          <span class="skill-tag">REST APIs</span>
+          <span class="skill-tag">Auth design</span>
+          <span class="skill-tag">Production deploy</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <h3>Domain Knowledge</h3>
+        <div class="skill-tags">
+          <span class="skill-tag orange">EdTech</span>
+          <span class="skill-tag orange">Fee collection</span>
+          <span class="skill-tag">Multi-currency</span>
+          <span class="skill-tag">INR / USD</span>
+          <span class="skill-tag">Real-time systems</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <h3>UX & Design</h3>
+        <div class="skill-tags">
+          <span class="skill-tag orange">Mobile-first</span>
+          <span class="skill-tag">Responsive UI</span>
+          <span class="skill-tag">Role-based views</span>
+          <span class="skill-tag">Dashboard design</span>
+          <span class="skill-tag">Audit logs UX</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <h3>Ops & Analytics</h3>
+        <div class="skill-tags">
+          <span class="skill-tag orange">Metrics dashboards</span>
+          <span class="skill-tag">Audit trail design</span>
+          <span class="skill-tag">IST timezone handling</span>
+          <span class="skill-tag">Pagination & filters</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCT WALKTHROUGH -->
+<section id="walkthrough" style="background:#0a0a0a; padding: 6rem 2rem;">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-tag">Product Walkthrough</div>
+      <h2 class="section-title">See how it<br/><strong>actually works</strong></h2>
+      <p class="section-sub">A step-by-step look at the live platform — from login to real-time payment status sync.</p>
+    </div>
+
+    <div class="walk-steps">
+
+      <div class="walk-item">
+        <div class="walk-text">
+          <div class="walk-num">01</div>
+          <div class="walk-phase">Authentication</div>
+          <h3>Secure login portal</h3>
+          <p>Role-based email + password login replaces the previous insecure URL-token approach. The UI is branded to UNext's payment platform identity — clean, professional, Juspay-secured.</p>
+          <div class="walk-tags">
+            <span class="wtag">Email auth</span>
+            <span class="wtag">Role-based access</span>
+            <span class="wtag">Forgot password</span>
+          </div>
+        </div>
+        <div class="walk-img-wrap">
+          <div class="walk-screen">
+            <div class="screen-bar"><span></span><span></span><span></span></div>
+            <div class="screen-body" style="background:#fff8f5; padding: 0;">
+              <div style="background:#E8630A; height:4px; width:100%;"></div>
+              <div style="padding:2rem 1.5rem; text-align:center;">
+                <div style="font-size:1.3rem; font-weight:700; color:#E8630A; letter-spacing:-0.03em; margin-bottom:4px;">unext</div>
+                <div style="font-size:9px; color:#E8630A; letter-spacing:0.12em; text-transform:uppercase; margin-bottom:1rem;">🔒 Secure Payment Portal</div>
+                <div style="font-size:1rem; font-weight:600; color:#1a1a1a; margin-bottom:4px;">Welcome back</div>
+                <div style="font-size:11px; color:#888; margin-bottom:1.5rem;">Sign in to the Payment Link Generator</div>
+                <div style="text-align:left; margin-bottom:0.75rem;">
+                  <div style="font-size:11px; font-weight:600; color:#333; margin-bottom:4px;">Email address</div>
+                  <div style="border:1.5px solid #E8630A; border-radius:8px; padding:8px 12px; font-size:11px; color:#aaa; background:#fff; display:flex; align-items:center; gap:6px;">✉ you@u-next.com</div>
+                </div>
+                <div style="text-align:left; margin-bottom:0.5rem;">
+                  <div style="font-size:11px; font-weight:600; color:#333; margin-bottom:4px;">Password</div>
+                  <div style="border:1px solid #ddd; border-radius:8px; padding:8px 12px; font-size:11px; color:#aaa; background:#fff; display:flex; justify-content:space-between;">🔒 ••••••••<span>👁</span></div>
+                </div>
+                <div style="text-align:right; font-size:10px; color:#E8630A; margin-bottom:1rem;">Forgot password?</div>
+                <div style="background:#E8630A; color:white; border-radius:8px; padding:9px; font-size:12px; font-weight:600; margin-bottom:1rem;">Sign In</div>
+                <div style="font-size:9px; color:#bbb;">Unext (SMU) · Payment Link Generator · Secured by Juspay</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="walk-item walk-item-rev">
+        <div class="walk-text">
+          <div class="walk-num">02</div>
+          <div class="walk-phase">Dashboard</div>
+          <h3>Real-time metrics & orders</h3>
+          <p>Live dashboard showing total links generated, unique customers, successful payments, and other statuses — with a per-user breakdown. The orders table shows every record with Payment ID, status badges, and filters.</p>
+          <div class="walk-tags">
+            <span class="wtag">4 metric cards</span>
+            <span class="wtag">Per-user attribution</span>
+            <span class="wtag">Live filters</span>
+            <span class="wtag">30s auto-refresh</span>
+          </div>
+        </div>
+        <div class="walk-img-wrap">
+          <div class="walk-screen walk-screen-wide">
+            <div class="screen-bar"><span></span><span></span><span></span></div>
+            <div class="screen-body" style="background:#f8f9fa; padding:0;">
+              <div style="background:#fff; border-bottom:1px solid #eee; padding:10px 14px; display:flex; justify-content:space-between; align-items:center;">
+                <div style="display:flex; align-items:center; gap:8px;"><span style="color:#E8630A;font-weight:700;font-size:12px;">unext</span><span style="font-size:10px;color:#666;">Payment Link Generator</span></div>
+                <div style="display:flex;align-items:center;gap:6px;"><span style="font-size:9px;color:#E8630A;">🔒 Kshitiz Raj Srivastava</span><span style="font-size:9px;background:#E8630A;color:#fff;padding:2px 6px;border-radius:4px;">Admin</span></div>
+              </div>
+              <div style="padding:12px 14px;">
+                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
+                  <div><div style="font-size:11px;font-weight:600;color:#1a1a1a;">Dashboard Overview</div><div style="font-size:9px;color:#999;">Monitor real-time payment link metrics.</div></div>
+                  <div style="background:#E8630A;color:#fff;font-size:9px;padding:5px 10px;border-radius:6px;font-weight:600;">+ Create Payment Link</div>
+                </div>
+                <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:6px;margin-bottom:10px;">
+                  <div style="background:#fff;border:1px solid #eee;border-radius:6px;padding:8px;text-align:center;"><div style="font-size:18px;font-weight:700;color:#1a1a1a;">8</div><div style="font-size:8px;color:#999;">Total Links</div></div>
+                  <div style="background:#fff;border:1px solid #eee;border-radius:6px;padding:8px;text-align:center;"><div style="font-size:18px;font-weight:700;color:#1a1a1a;">7</div><div style="font-size:8px;color:#999;">Unique Customers</div></div>
+                  <div style="background:#fff;border:1px solid #eee;border-radius:6px;padding:8px;text-align:center;"><div style="font-size:18px;font-weight:700;color:#1a1a1a;">4</div><div style="font-size:8px;color:#999;">Successful</div></div>
+                  <div style="background:#fff;border:1px solid #eee;border-radius:6px;padding:8px;text-align:center;"><div style="font-size:18px;font-weight:700;color:#1a1a1a;">4</div><div style="font-size:8px;color:#999;">Other Statuses</div></div>
+                </div>
+                <div style="background:#fff;border:1px solid #eee;border-radius:6px;padding:8px;font-size:8px;color:#555;margin-bottom:8px;">
+                  <span style="color:#E8630A;margin-right:8px;">● Ashrumit Avinash 3</span>
+                  <span style="color:#E8630A;margin-right:8px;">● Kshitiz Raj Srivastava 3</span>
+                  <span style="color:#E8630A;">● Pallavi Kaisth 2</span>
+                </div>
+                <div style="background:#fff;border:1px solid #eee;border-radius:6px;overflow:hidden;">
+                  <div style="display:grid;grid-template-columns:2fr 1fr 1.2fr 0.8fr 1fr;padding:6px 8px;border-bottom:1px solid #f0f0f0;font-size:7px;font-weight:600;color:#999;">
+                    <span>Customer</span><span>Roll No.</span><span>Program/Sem</span><span>Amount</span><span>Status</span>
+                  </div>
+                  <div style="display:grid;grid-template-columns:2fr 1fr 1.2fr 0.8fr 1fr;padding:5px 8px;border-bottom:1px solid #f9f9f9;font-size:7px;color:#444;align-items:center;">
+                    <span>Ashrumit<br/><span style="color:#aaa;font-size:6px;">ashrumit@u-next.com</span></span><span>2346234190</span><span>BA · S2 · Sem</span><span>₹1.00</span><span style="background:#dcfce7;color:#166534;font-size:6px;padding:2px 5px;border-radius:3px;font-weight:600;">CHARGED</span>
+                  </div>
+                  <div style="display:grid;grid-template-columns:2fr 1fr 1.2fr 0.8fr 1fr;padding:5px 8px;border-bottom:1px solid #f9f9f9;font-size:7px;color:#444;align-items:center;">
+                    <span>Test<br/><span style="color:#aaa;font-size:6px;">raj97krs@gmail.com</span></span><span>2345345111</span><span>MA Eng · S2</span><span>₹1.00</span><span style="background:#dcfce7;color:#166534;font-size:6px;padding:2px 5px;border-radius:3px;font-weight:600;">CHARGED</span>
+                  </div>
+                  <div style="display:grid;grid-template-columns:2fr 1fr 1.2fr 0.8fr 1fr;padding:5px 8px;font-size:7px;color:#444;align-items:center;">
+                    <span>Test KRS 1<br/><span style="color:#aaa;font-size:6px;">raj97krs@gmail.com</span></span><span>23423424</span><span>BA · S2 · Sem</span><span>₹1.00</span><span style="background:#fef9c3;color:#854d0e;font-size:6px;padding:2px 5px;border-radius:3px;font-weight:600;">CREATED</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="walk-item">
+        <div class="walk-text">
+          <div class="walk-num">03</div>
+          <div class="walk-phase">Link Creation</div>
+          <h3>Smart payment link form</h3>
+          <p>The creation modal maps UNext's business fields directly to Juspay's API. Semester selection adapts by fee type — single select for Semester, consecutive-only for Annual, multi-select for Full Course. Expiry is auto-converted to minutes.</p>
+          <div class="walk-tags">
+            <span class="wtag">Fee type logic</span>
+            <span class="wtag">Consecutive validation</span>
+            <span class="wtag">INR + USD</span>
+            <span class="wtag">Expiry in mins</span>
+          </div>
+        </div>
+        <div class="walk-img-wrap">
+          <div class="walk-screen">
+            <div class="screen-bar"><span></span><span></span><span></span></div>
+            <div class="screen-body" style="background:#f8f9fa;padding:0;">
+              <div style="background:rgba(0,0,0,0.4);padding:16px;display:flex;align-items:center;justify-content:center;min-height:260px;">
+                <div style="background:#fff;border-radius:10px;padding:14px;width:100%;max-width:280px;box-shadow:0 8px 32px rgba(0,0,0,0.15);">
+                  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
+                    <div><div style="font-size:11px;font-weight:600;color:#1a1a1a;">Create Payment Link</div><div style="font-size:8px;color:#999;">Fill in the details to generate a Juspay link.</div></div>
+                    <span style="color:#999;font-size:14px;">×</span>
+                  </div>
+                  <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:6px;">
+                    <div><div style="font-size:8px;font-weight:600;color:#555;margin-bottom:2px;">Roll Number *</div><div style="border:1px solid #ddd;border-radius:5px;padding:5px 7px;font-size:8px;color:#888;">234325423</div></div>
+                    <div><div style="font-size:8px;font-weight:600;color:#555;margin-bottom:2px;">Customer Name *</div><div style="border:1px solid #ddd;border-radius:5px;padding:5px 7px;font-size:8px;color:#888;">Test</div></div>
+                  </div>
+                  <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:6px;">
+                    <div><div style="font-size:8px;font-weight:600;color:#555;margin-bottom:2px;">Customer Email *</div><div style="border:1px solid #ddd;border-radius:5px;padding:5px 7px;font-size:8px;color:#888;">test@gmail.com</div></div>
+                    <div><div style="font-size:8px;font-weight:600;color:#555;margin-bottom:2px;">Phone Number *</div><div style="border:1px solid #ddd;border-radius:5px;padding:5px 7px;font-size:8px;color:#888;display:flex;gap:3px;"><span>+91</span><span>8604635705</span></div></div>
+                  </div>
+                  <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:6px;">
+                    <div><div style="font-size:8px;font-weight:600;color:#555;margin-bottom:2px;">Program *</div><div style="border:1px solid #ddd;border-radius:5px;padding:5px 7px;font-size:8px;color:#888;display:flex;justify-content:space-between;">BA <span>∨</span></div></div>
+                    <div><div style="font-size:8px;font-weight:600;color:#555;margin-bottom:2px;">Fee Type *</div><div style="border:1px solid #ddd;border-radius:5px;padding:5px 7px;font-size:8px;color:#888;display:flex;justify-content:space-between;">Annual <span>∨</span></div></div>
+                  </div>
+                  <div style="margin-bottom:6px;">
+                    <div style="font-size:8px;font-weight:600;color:#555;margin-bottom:2px;">Semesters * <span style="color:#E8630A;font-weight:400;">Select exactly 2 consecutive semesters</span></div>
+                    <div style="display:flex;gap:4px;flex-wrap:wrap;">
+                      <span style="border:1px solid #ddd;border-radius:4px;padding:3px 8px;font-size:8px;color:#aaa;">S2</span>
+                      <span style="border:1.5px solid #E8630A;background:#fff8f5;border-radius:4px;padding:3px 8px;font-size:8px;color:#E8630A;font-weight:600;">S3</span>
+                      <span style="border:1.5px solid #E8630A;background:#fff8f5;border-radius:4px;padding:3px 8px;font-size:8px;color:#E8630A;font-weight:600;">S4</span>
+                      <span style="border:1px solid #ddd;border-radius:4px;padding:3px 8px;font-size:8px;color:#aaa;">S5</span>
+                      <span style="border:1px solid #ddd;border-radius:4px;padding:3px 8px;font-size:8px;color:#aaa;">S6</span>
+                    </div>
+                    <div style="font-size:7px;color:#E8630A;margin-top:2px;">Selected: S3, S4</div>
+                  </div>
+                  <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:10px;">
+                    <div><div style="font-size:8px;font-weight:600;color:#555;margin-bottom:2px;">Amount *</div><div style="border:1px solid #ddd;border-radius:5px;padding:5px 7px;font-size:8px;color:#888;display:flex;gap:3px;"><span style="color:#E8630A;">INR</span> 10000</div></div>
+                    <div><div style="font-size:8px;font-weight:600;color:#555;margin-bottom:2px;">Expiry Date *</div><div style="border:1px solid #ddd;border-radius:5px;padding:5px 7px;font-size:8px;color:#888;">26/03/2026 📅</div></div>
+                  </div>
+                  <div style="display:flex;justify-content:flex-end;gap:6px;">
+                    <div style="border:1px solid #ddd;border-radius:6px;padding:6px 12px;font-size:9px;color:#666;">Cancel</div>
+                    <div style="background:#E8630A;color:#fff;border-radius:6px;padding:6px 12px;font-size:9px;font-weight:600;">Generate Link</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="walk-item walk-item-rev">
+        <div class="walk-text">
+          <div class="walk-num">04</div>
+          <div class="walk-phase">Audit & Logs</div>
+          <h3>4-type system logs</h3>
+          <p>Every interaction is captured — user form submissions, outbound Juspay API calls, incoming webhooks, and SLCM events. Each log entry shows a collapsible JSON payload with timestamp. Visible only to the Admin role.</p>
+          <div class="walk-tags">
+            <span class="wtag">User submissions</span>
+            <span class="wtag">Juspay API logs</span>
+            <span class="wtag">Webhook logs</span>
+            <span class="wtag">Admin only</span>
+          </div>
+        </div>
+        <div class="walk-img-wrap">
+          <div class="walk-screen walk-screen-wide">
+            <div class="screen-bar"><span></span><span></span><span></span></div>
+            <div class="screen-body" style="background:#f8f9fa;padding:12px;">
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
+                <div style="font-size:11px;font-weight:600;color:#1a1a1a;">⌨ System Logs</div>
+                <div style="font-size:8px;color:#E8630A;border:1px solid #E8630A;padding:3px 8px;border-radius:4px;">↻ Refresh</div>
+              </div>
+              <div style="display:flex;gap:0;border:1px solid #eee;border-radius:6px;overflow:hidden;margin-bottom:10px;">
+                <div style="background:#E8630A;color:#fff;padding:5px 10px;font-size:8px;font-weight:600;">User Submissions</div>
+                <div style="padding:5px 10px;font-size:8px;color:#666;border-left:1px solid #eee;">Juspay API</div>
+                <div style="padding:5px 10px;font-size:8px;color:#666;border-left:1px solid #eee;">Webhooks</div>
+                <div style="padding:5px 10px;font-size:8px;color:#666;border-left:1px solid #eee;">SLCM</div>
+              </div>
+              <div style="background:#1a1a2e;border-radius:6px;padding:10px;font-family:monospace;font-size:7px;color:#a8d8a8;line-height:1.7;">
+                <span style="color:#888;">Mar 25, 2026 15:51:21</span> <span style="color:#E8630A;">USER_SUBMISSION</span><br/>
+                {<br/>
+                &nbsp;&nbsp;"amount": "3",<br/>
+                &nbsp;&nbsp;"feeType": "Semester",<br/>
+                &nbsp;&nbsp;"program": "MA Sociology",<br/>
+                &nbsp;&nbsp;"currency": "INR",<br/>
+                &nbsp;&nbsp;"createdBy": "Ashrumit Avinash",<br/>
+                &nbsp;&nbsp;"semesters": ["S3"],<br/>
+                &nbsp;&nbsp;"rollNumber": "2527626",<br/>
+                &nbsp;&nbsp;"customerName": "Ashrumit"<br/>
+                }
+              </div>
+              <div style="margin-top:6px;display:flex;flex-direction:column;gap:3px;">
+                <div style="background:#fff;border:1px solid #eee;border-radius:4px;padding:5px 8px;display:flex;justify-content:space-between;font-size:7px;color:#666;"><span>Mar 25, 2026 15:23:25 · USER_SUBMISSION</span><span>∨</span></div>
+                <div style="background:#fff;border:1px solid #eee;border-radius:4px;padding:5px 8px;display:flex;justify-content:space-between;font-size:7px;color:#666;"><span>Mar 25, 2026 11:42:32 · USER_SUBMISSION</span><span>∨</span></div>
+                <div style="background:#fff;border:1px solid #eee;border-radius:4px;padding:5px 8px;display:flex;justify-content:space-between;font-size:7px;color:#666;"><span>Mar 24, 2026 16:53:02 · USER_SUBMISSION</span><span>∨</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-inner">
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h2>Let's talk<br/><strong>payments.</strong></h2>
+        <p>I'm looking for fintech and product roles where payment integrations and real-time systems are core. If that's your team, I'd love to connect.</p>
+        <div class="contact-links">
+          <a href="mailto:kshitizsrivastava08@gmail.com" class="contact-link">
+            <span class="cl-icon">✉</span>
+            kshitizsrivastava08@gmail.com
+          </a>
+          <div class="contact-link contact-link-phone">
+            <span class="cl-icon">📱</span>
+            <span class="phone-num">+91-8604635705</span>
+            <div class="phone-actions">
+              <a href="tel:+918604635705" class="phone-btn" title="Call">📞 Call</a>
+              <a href="https://wa.me/918604635705" target="_blank" class="phone-btn phone-btn-wa" title="WhatsApp">💬 WhatsApp</a>
+              <a href="sms:+918604635705" class="phone-btn" title="Text">✉ Text</a>
+            </div>
+          </div>
+          <a href="https://www.linkedin.com/in/krs08" target="_blank" class="contact-link contact-link-li">
+            <span class="cl-icon">in</span>
+            linkedin.com/in/krs08
+          </a>
+        </div>
+      </div>
+      <div class="demo-card">
+        <h3>Request a live walkthrough</h3>
+        <p>The platform is login-protected with role-based access. To see it live with real data — payment orders, webhook logs, and the Admin dashboard — reach out directly and I'll walk you through it.</p>
+        <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:1.25rem;">
+          <a href="https://wa.me/918604635705?text=Hi%20Kshitiz%2C%20I%27d%20like%20to%20book%20a%20demo%20of%20your%20Payment%20Link%20Generator" target="_blank" class="demo-btn" style="background:#25D366;display:flex;align-items:center;justify-content:center;gap:8px;">
+            💬 Book Demo via WhatsApp
+          </a>
+          <a href="mailto:kshitizsrivastava08@gmail.com?subject=Demo%20Request%20-%20Payment%20Link%20Generator&body=Hi%20Kshitiz%2C%0A%0AI%27d%20like%20to%20book%20a%20demo%20of%20your%20Payment%20Link%20Generator." class="demo-btn" style="background:transparent;border:1px solid rgba(255,255,255,0.2);display:flex;align-items:center;justify-content:center;gap:8px;">
+            ✉ Book Demo via Email
+          </a>
+        </div>
+        <div style="text-align:center;">
+          <a href="https://www.linkedin.com/in/krs08" target="_blank" style="font-size:12px;color:rgba(255,255,255,0.4);text-decoration:underline;text-underline-offset:3px;">Or connect on LinkedIn →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  Built by <span>Kshitiz Raj Srivastava</span> · PM Portfolio · Payments & Fintech
+</footer>
+
+<script>
+function switchTab(btn, id) {
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById(id).classList.add('active');
+}
+</script>
+</body>
+</html>
